@@ -2,6 +2,7 @@
 	Fonts
    -------
 	The fonts that must be loaded by the user in order to be displayed. */
+/* ARVO */
 /* Arvo Regular */
 @font-face {
 	/* Typography */
@@ -32,6 +33,13 @@
 	font-style: italic;
 	font-weight: bold;
 	src: url('../fonts/arvo-bold-italic.ttf') format('truetype');
+}
+
+/* ROBOTO SLAB */
+/* Roboto Slab Regular */
+@font-face {
+	font-family: "Roboto Slab";
+	src: url('../fonts/RobotoSlab-regular.ttf') format('truetype');
 }
 
 /* ----------------
@@ -75,13 +83,15 @@ p {
 }
 
 /* LINKS */
+/* Links' blue color, except for the "Projects" links */
 *:not(#projects) a { color: #41a0eb; }
 
 a { text-decoration: none; }
 
 a:hover { text-decoration: underline; }
 
-*:not(#projects) a:active { color: #6abc46; } /* BEAUTIFUL GREEN */
+/* Links are green when being clicked, except for the "Projects" links */
+*:not(#projects) a:active { color: #6abc46; }
 
 /* SUPERSCRIPT */
 sup {
@@ -139,12 +149,18 @@ sup {
 	Projects
    ---------- */
 #projects li {
+	position: relative;
 	margin: 20px 0;
+
+	min-height: 80px;
+	padding-left: 100px;
 }
 
-#projects li:first-of-type { margin: 40px 0 20px; }
+/* First project item */
+#projects > ul > a:first-child > li { margin: 40px 0 20px; }
 
-#projects li:last-of-type { margin: 20px 0 40px; }
+/* Last project item */
+#projects > ul > a:last-child > li { margin: 20px 0 40px; }
 
 #projects a {
 	color: inherit;
@@ -158,10 +174,64 @@ sup {
 	color: inherit;
 }
 
-/* ------------------
-	Responsive rules
-   ------------------
+/* PROJECT ITEMS */
+#projects li:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 80px;
+	height: 80px;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Mado project */
+#mado:before { background-image: url("../img/mado-logo.png"); }
+
+/* GitHub projects */
+#github:before { background-image: url("../img/github-logo.png"); }
+
+/* GitHub projects */
+#medium:before { background-image: url("../img/medium-logo.png"); }
+
+/* GitHub projects */
+#queens-mask:before { background-image: url("../img/writing-icon.png"); }
+
+/* --------
+	Footer
+   -------- */
+#footer {
+
+}
+
+
+/* ==================
+	RESPONSIVE RULES
+   ==================
     This part describes how the main page should be displayed on small screens. */
+
+@media (max-width: 480px) {
+	/* ----------
+		Projects
+	   ---------- */
+	#projects li { padding-left: 50px; }
+
+	/* First project item */
+	#projects > ul > a:first-child > li { margin: 20px 0; }
+
+	/* Last project item */
+	#projects > ul > a:last-child > li { margin: 20px 0; }
+
+	/* PROJECT ITEMS */
+	#projects li:before {
+		width: 40px;
+		height: 40px;
+	}
+}
+
 @media (max-width: 360px) {
 	#wrapper { padding: 0 20px; } /* The side paddings are reduced in order to display more elements */
 }
