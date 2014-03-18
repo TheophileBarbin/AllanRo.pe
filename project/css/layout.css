@@ -1,10 +1,21 @@
 /* ========
 	LAYOUT
-   ======== */
+   ========
+	This part describes the basic layout of any page on AllanRo.pe */
 
 #wrapper {
 	margin: 0 auto;
 
-	width: 1000px;
-	padding-top: 150px;
+	min-height: 100%;
+	max-width: 580px;
+	width: 100%;
+	padding: 0 40px;
+}
+
+/* -------------------
+	Responsive layout
+   -------------------
+    This part describes how the basic layout should behave on small screens. */
+@media (max-width: 360px) {
+	#wrapper { padding: 0 20px; } /* The side paddings are reduced in order to display more elements */
 }

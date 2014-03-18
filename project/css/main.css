@@ -1,0 +1,167 @@
+/* -------
+	Fonts
+   -------
+	The fonts that must be loaded by the user in order to be displayed. */
+/* Arvo Regular */
+@font-face {
+	/* Typography */
+	font-family: Arvo;
+	src: url('../fonts/arvo-regular.ttf') format('truetype');
+}
+
+/* Arvo Bold */
+@font-face {
+	/* Typography */
+	font-family: Arvo;
+	font-weight: bold;
+	src: url('../fonts/arvo-bold.ttf') format('truetype');
+}
+
+/* Arvo Italic */
+@font-face {
+	/* Typography */
+	font-family: Arvo;
+	font-style: italic;
+	src: url('../fonts/arvo-italic.ttf') format('truetype');
+}
+
+/* Arvo Bold Italic */
+@font-face {
+	/* Typography */
+	font-family: Arvo;
+	font-style: italic;
+	font-weight: bold;
+	src: url('../fonts/arvo-bold-italic.ttf') format('truetype');
+}
+
+/* ----------------
+	Generic styles
+   ---------------- */
+body {
+	font-family: Arvo, Georgia, serif;
+	font-size: 16px;
+	line-height: 22px;
+	color: #888;
+}
+
+/* TITLES */
+h1 {
+	padding-top: 40px;
+
+	font-family: "Roboto slab", Arvo, Georgia, serif;
+	font-size: 30px;
+	line-height: 40px;
+	text-align: center;
+	color: #000;
+}
+
+h2 {
+	font-family: "Roboto slab", Arvo, Georgia, serif;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+}
+
+h3 {
+	font-family: "Roboto slab", Arvo, Georgia, serif;
+	font-size: 18px;
+	line-height: 25px;
+	color: #000;
+}
+
+/* PARAGRAPHS */
+p {
+	margin-bottom: 20px;
+}
+
+/* LINKS */
+*:not(#projects) a { color: #41a0eb; }
+
+a { text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+*:not(#projects) a:active { color: #6abc46; } /* BEAUTIFUL GREEN */
+
+/* SUPERSCRIPT */
+sup {
+	vertical-align: 5px;
+
+	font-size: 10px;
+	line-height: 0;
+	font-weight: bold;
+}
+
+/* --------
+	Header
+   --------
+	The header refers to the top blurred picture and the round logo. */
+#header {
+	position: relative;
+
+	height: 200px;
+
+	background-color: blue;
+}
+
+/* THE "ar" LOGO
+   It is displayed at the center of the header. */
+#ar-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -54px 0 0 -54px;
+
+	width: 108px;
+	height: 108px;
+
+	border: 20px solid rgba(255,255,255,.2);
+	border-radius: 54px;
+}
+
+/* ------------
+	Sub-header
+   ------------ */
+#sub-header {
+	height: 150px;
+
+	border-bottom: 1px solid #888;
+}
+
+/* --------------
+	Main content
+   -------------- */
+#main-content {
+	padding-top: 40px;
+}
+
+/* ----------
+	Projects
+   ---------- */
+#projects li {
+	margin: 20px 0;
+}
+
+#projects li:first-of-type { margin: 40px 0 20px; }
+
+#projects li:last-of-type { margin: 20px 0 40px; }
+
+#projects a {
+	color: inherit;
+}
+
+#projects a:hover {
+	text-decoration: none;
+}
+
+#projects a:active {
+	color: inherit;
+}
+
+/* ------------------
+	Responsive rules
+   ------------------
+    This part describes how the main page should be displayed on small screens. */
+@media (max-width: 360px) {
+	#wrapper { padding: 0 20px; } /* The side paddings are reduced in order to display more elements */
+}
