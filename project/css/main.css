@@ -45,6 +45,7 @@
 /* ----------------
 	Generic styles
    ---------------- */
+/* BASIC TYPOGRAPHY */
 body {
 	font-family: Arvo, Georgia, serif;
 	font-size: 16px;
@@ -78,9 +79,7 @@ h3 {
 }
 
 /* PARAGRAPHS */
-p {
-	margin-bottom: 20px;
-}
+p {	margin-bottom: 20px; }
 
 /* LINKS */
 /* Links' blue color, except for the "Projects" links */
@@ -101,6 +100,9 @@ sup {
 	line-height: 0;
 	font-weight: bold;
 }
+
+/* EMPHASIS */
+em { font-style: italic; }
 
 /* --------
 	Header
@@ -148,6 +150,8 @@ sup {
 /* ----------
 	Projects
    ---------- */
+#projects { margin: 40px 0; }
+
 #projects li {
 	position: relative;
 	margin: 20px 0;
@@ -155,12 +159,6 @@ sup {
 	min-height: 80px;
 	padding-left: 100px;
 }
-
-/* First project item */
-#projects > ul > a:first-child > li { margin: 40px 0 20px; }
-
-/* Last project item */
-#projects > ul > a:last-child > li { margin: 20px 0 40px; }
 
 #projects a {
 	color: inherit;
@@ -194,17 +192,46 @@ sup {
 /* GitHub projects */
 #github:before { background-image: url("../img/github-logo.png"); }
 
-/* GitHub projects */
+/* Medium writings project */
 #medium:before { background-image: url("../img/medium-logo.png"); }
 
-/* GitHub projects */
+/* Novel project: 'Le Masque de la reine' */
 #queens-mask:before { background-image: url("../img/writing-icon.png"); }
 
 /* --------
 	Footer
    -------- */
 #footer {
+	margin-top: 40px;
 
+	padding: 20px 0 40px;
+
+	border-top: 1px solid #888;
+}
+
+#footer a {
+	position: relative;
+
+	padding-left: 24px;
+
+	color: inherit;
+}
+
+#footer a:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 24px;
+	height: 100%;
+
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#twitter-link:before {
+	background-image: url("../img/twitter-icon.png");
 }
 
 
@@ -214,16 +241,37 @@ sup {
     This part describes how the main page should be displayed on small screens. */
 
 @media (max-width: 480px) {
+	/* --------
+		Header
+	   --------
+		The header refers to the top blurred picture and the round logo. */
+	#header {
+		position: relative;
+
+		height: 150px;
+
+		background-color: blue;
+	}
+
+	/* THE "ar" LOGO
+	   It is displayed at the center of the header. */
+	#ar-logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -54px 0 0 -54px;
+
+		width: 108px;
+		height: 108px;
+
+		border: 20px solid rgba(255,255,255,.2);
+		border-radius: 54px;
+	}
+
 	/* ----------
 		Projects
 	   ---------- */
 	#projects li { padding-left: 50px; }
-
-	/* First project item */
-	#projects > ul > a:first-child > li { margin: 20px 0; }
-
-	/* Last project item */
-	#projects > ul > a:last-child > li { margin: 20px 0; }
 
 	/* PROJECT ITEMS */
 	#projects li:before {
@@ -233,5 +281,82 @@ sup {
 }
 
 @media (max-width: 360px) {
+	/* --------
+		Layout
+	   -------- */
 	#wrapper { padding: 0 20px; } /* The side paddings are reduced in order to display more elements */
+
+	/* ----------------
+		Generic styles
+	   ---------------- */
+	/* BASIC TYPOGRAPHY */
+	body {
+		font-family: Arvo, Georgia, serif;
+		font-size: 14px;
+		line-height: 20px;
+		color: #888;
+	}
+
+	/* TITLES */
+	h1 {
+		padding-top: 20px;
+
+		font-size: 26px;
+		line-height: 34px;
+		text-align: center;
+		color: #000;
+	}
+
+	h2 {
+		font-size: 16px;
+		line-height: 22px;
+		text-align: center;
+	}
+
+	h3 {
+		font-size: 18px;
+		line-height: 25px;
+		color: #000;
+	}
+
+	/* --------
+		Header
+	   --------
+		The header refers to the top blurred picture and the round logo. */
+	#header {
+		position: relative;
+
+		height: 100px;
+
+		background-color: blue;
+	}
+
+	/* THE "ar" LOGO
+	   It is displayed at the center of the header. */
+	#ar-logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -54px 0 0 -54px;
+
+		width: 108px;
+		height: 108px;
+
+		border: 20px solid rgba(255,255,255,.2);
+		border-radius: 54px;
+	}
+
+	/* ------------
+		Sub-header
+	   ------------ */
+	#sub-header {
+		height: 100px;
+
+		border-bottom: 1px solid #888;
+	}
+
+	/* --------------
+		Main content
+	   -------------- */
+	#main-content { padding-top: 20px; }
 }
