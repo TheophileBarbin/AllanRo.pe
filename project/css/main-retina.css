@@ -1,8 +1,15 @@
-/* Responsive rules for retina displays */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
-	   only screen and (-o-min-device-pixel-ratio: 13/10),
-	   only screen and (min-resolution: 120dpi)
-	{
+/* =========================
+	RETINA RESPONSIVE RULES
+   =========================
+    This part describes how the main page should be displayed on retina screens. */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi) {
+	/* --------
+		Header
+	   -------- */
+	/* THE "ar" LOGO */
+	#ar-logo:after { background-image: url("../img/ar-logo@2x.png"); }
+
 	/* ----------
 		Projects
 	   ---------- */
@@ -18,4 +25,39 @@
 
 	/* GitHub projects */
 	#queens-mask:before { background-image: url("../img/writing-icon@2x.png"); }
+
+	/* --------
+		Footer
+	   -------- */
+	#twitter-link:before { background-image: url("../img/twitter-icon@2x.png"); }
+
+	#contact-link:before { background-image: url("../img/letter-icon@2x.png"); }
+}
+
+/* Prevent @2x version of most images from loading on retina screens below 480px wide (as they are already displayed half their real size) */
+@media only screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (max-width: 480px) and (-o-min-device-pixel-ratio: 13/10), only screen and (max-width: 480px) and (min-resolution: 120dpi) {
+	/* ----------
+		Projects
+	   ---------- */
+	/* PROJECT ITEMS */
+	/* Mado project */
+	#mado:before { background-image: url("../img/mado-logo.png"); }
+
+	/* GitHub projects */
+	#github:before { background-image: url("../img/github-logo.png"); }
+
+	/* GitHub projects */
+	#medium:before { background-image: url("../img/medium-logo.png"); }
+
+	/* GitHub projects */
+	#queens-mask:before { background-image: url("../img/writing-icon.png"); }
+}
+
+/* Prevent @2x version of the "ar" logo from loading on retina screens below 360px wide (as it is already displayed half its real size) */
+@media only screen and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (max-width: 360px) and (-o-min-device-pixel-ratio: 13/10), only screen and (max-width: 360px) and (min-resolution: 120dpi) {
+	/* --------
+		Header
+	   -------- */
+	/* THE "ar" LOGO */
+	#ar-logo:after { background-image: url("../img/ar-logo.png"); }
 }

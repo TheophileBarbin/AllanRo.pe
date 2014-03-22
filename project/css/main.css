@@ -1,3 +1,7 @@
+/* =============
+	MAIN STYLES
+   ============= */
+
 /* -------
 	Fonts
    -------
@@ -79,13 +83,16 @@ h3 {
 }
 
 /* PARAGRAPHS */
-p {	margin-bottom: 20px; }
+p {	margin-bottom: 22px; }
 
 /* LINKS */
 /* Links' blue color, except for the "Projects" links */
 *:not(#projects) a { color: #41a0eb; }
 
-a { text-decoration: none; }
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* Disable gray overlay in Safari for iOS and Chrome for Android */
+}
 
 a:hover { text-decoration: underline; }
 
@@ -113,7 +120,9 @@ em { font-style: italic; }
 
 	height: 200px;
 
-	background-color: blue;
+	background-image: url("../img/header-photo.jpg");
+	background-position: center;
+	background-size: cover;
 }
 
 /* THE "ar" LOGO
@@ -127,8 +136,24 @@ em { font-style: italic; }
 	width: 108px;
 	height: 108px;
 
-	border: 20px solid rgba(255,255,255,.2);
+	background-color: rgba(255,255,255,.2);
 	border-radius: 54px;
+}
+
+#ar-logo:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -34px 0 0 -34px;
+
+	width: 68px;
+	height: 68px;
+	overflow: hidden;
+
+	background-image: url("../img/ar-logo.png");
+	background-size: cover;
+	border-radius: 34px;
 }
 
 /* ------------
@@ -160,17 +185,18 @@ em { font-style: italic; }
 	padding-left: 100px;
 }
 
-#projects a {
-	color: inherit;
+#projects a { color: inherit; }
+
+#projects a:hover { text-decoration: none; }
+
+#projects a:hover h3 {
+	color: #41a0eb;
+	text-decoration: underline;
 }
 
-#projects a:hover {
-	text-decoration: none;
-}
+#projects a:active { color: inherit; }
 
-#projects a:active {
-	color: inherit;
-}
+#projects a:active h3 { color: #6abc46; }
 
 /* PROJECT ITEMS */
 #projects li:before {
@@ -182,6 +208,7 @@ em { font-style: italic; }
 	width: 80px;
 	height: 80px;
 
+	border-radius: 40px;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -194,9 +221,6 @@ em { font-style: italic; }
 
 /* Medium writings project */
 #medium:before { background-image: url("../img/medium-logo.png"); }
-
-/* Novel project: 'Le Masque de la reine' */
-#queens-mask:before { background-image: url("../img/writing-icon.png"); }
 
 /* --------
 	Footer
@@ -212,26 +236,42 @@ em { font-style: italic; }
 #footer a {
 	position: relative;
 
-	padding-left: 24px;
+	padding-left: 25px;
 
 	color: inherit;
 }
 
+#footer a:not(:last-of-type) { margin-right: 10px; }
+
 #footer a:before {
 	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
-
-	width: 24px;
-	height: 100%;
 
 	background-position: center;
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 #twitter-link:before {
+	top: 50%;
+	left: 4px;
+	margin-top: -7px;
+
+	width: 18px;
+	height: 15px;
+
 	background-image: url("../img/twitter-icon.png");
+}
+
+#contact-link:before {
+	top: 50%;
+	left: 3px;
+	margin-top: -7px;
+
+	width: 18px;
+	height: 14px;
+
+	background-image: url("../img/letter-icon.png");
 }
 
 
@@ -256,28 +296,69 @@ em { font-style: italic; }
 	/* THE "ar" LOGO
 	   It is displayed at the center of the header. */
 	#ar-logo {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin: -54px 0 0 -54px;
+		margin: -44px 0 0 -44px;
 
-		width: 108px;
-		height: 108px;
-
-		border: 20px solid rgba(255,255,255,.2);
-		border-radius: 54px;
+		width: 88px;
+		height: 88px;
 	}
 
 	/* ----------
 		Projects
 	   ---------- */
-	#projects li { padding-left: 50px; }
-
 	/* PROJECT ITEMS */
+	#projects li {
+		min-height: 40px;
+		padding-left: 50px;
+	}
+
 	#projects li:before {
 		width: 40px;
 		height: 40px;
 	}
+
+	/* --------
+		Footer
+	   -------- */
+	#footer a {
+		margin: 0 auto;
+
+		display: block;
+		width: 100%;
+		max-width: 280px;
+		height: 40px;
+		padding: 0 40px;
+
+		line-height: 40px;
+		text-align: center;
+
+		border: 1px solid #ddd;
+		border-radius: 20px;
+
+		transition: background-color .1s ease;
+	}
+
+	#footer a:not(:last-of-type) { margin: 0 auto 10px; }
+
+	#footer a:hover {
+		text-decoration: none;
+
+		background-color: #f8f8f8;
+	}
+
+	#footer a:active {
+		color: #fff;
+
+		background-color: #6abc46;
+		border-color: #6abc46;
+
+		transition: none;
+	}
+
+	#footer a:active:before { display: none; }
+
+	#twitter-link:before { left: 20px; }
+
+	#contact-link:before { left: 20px; }
 }
 
 @media (max-width: 360px) {
@@ -303,60 +384,74 @@ em { font-style: italic; }
 
 		font-size: 26px;
 		line-height: 34px;
-		text-align: center;
-		color: #000;
 	}
 
-	h2 {
+	h2,
+	h3 {
 		font-size: 16px;
 		line-height: 22px;
 		text-align: center;
 	}
 
-	h3 {
-		font-size: 18px;
-		line-height: 25px;
-		color: #000;
-	}
+	/* PARAGRAPHS */
+	p {	margin-bottom: 20px; }
 
 	/* --------
 		Header
 	   --------
 		The header refers to the top blurred picture and the round logo. */
-	#header {
-		position: relative;
-
-		height: 100px;
-
-		background-color: blue;
-	}
+	#header { height: 100px; }
 
 	/* THE "ar" LOGO
 	   It is displayed at the center of the header. */
 	#ar-logo {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin: -54px 0 0 -54px;
+		margin: -27px 0 0 -27px;
 
-		width: 108px;
-		height: 108px;
+		width: 54px;
+		height: 54px;
+	}
 
-		border: 20px solid rgba(255,255,255,.2);
-		border-radius: 54px;
+	#ar-logo:after {
+		margin: -17px 0 0 -17px;
+
+		width: 34px;
+		height: 34px;
 	}
 
 	/* ------------
 		Sub-header
 	   ------------ */
-	#sub-header {
-		height: 100px;
-
-		border-bottom: 1px solid #888;
-	}
+	#sub-header { height: 100px; }
 
 	/* --------------
 		Main content
 	   -------------- */
 	#main-content { padding-top: 20px; }
+
+	/* ----------
+		Projects
+	   ---------- */
+	#projects { margin: 20px 0; }
+
+	#projects p { text-align: center; }
+
+	/* PROJECT ITEMS */
+	#projects li {
+		min-height: 0;
+		padding: 50px 0 0;
+	}
+
+	#projects li:before {
+		left: 50%;
+		margin-left: -20px;
+	}
+
+	/* --------
+		Footer
+	   -------- */
+	#footer {
+		margin-top: 20px;
+
+		padding: 20px 0;
+	}
 }
