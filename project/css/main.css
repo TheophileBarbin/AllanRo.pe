@@ -175,8 +175,26 @@ em { font-style: italic; }
 /* ----------
 	Projects
    ---------- */
+/* Keep a reasonable distance from the rest of the content */
 #projects { margin: 40px 0; }
 
+/* The project items have no special decoration */
+#projects a { color: inherit; }
+
+/* When the user hovers a project item, only the title is underlined */
+#projects a:hover { text-decoration: none; }
+
+#projects a:hover h3 {
+	color: #41a0eb;
+	text-decoration: underline;
+}
+
+/* When a project item is clicked, only the title is colored in green */
+#projects a:active { color: inherit; }
+
+#projects a:active h3 { color: #6abc46; }
+
+/* PROJECT ITEMS */
 #projects li {
 	position: relative;
 	margin: 20px 0;
@@ -185,20 +203,7 @@ em { font-style: italic; }
 	padding-left: 100px;
 }
 
-#projects a { color: inherit; }
-
-#projects a:hover { text-decoration: none; }
-
-#projects a:hover h3 {
-	color: #41a0eb;
-	text-decoration: underline;
-}
-
-#projects a:active { color: inherit; }
-
-#projects a:active h3 { color: #6abc46; }
-
-/* PROJECT ITEMS */
+/* Common styles for the thumbnail displayed before the project items */
 #projects li:before {
 	content: "";
 	position: absolute;
@@ -224,15 +229,17 @@ em { font-style: italic; }
 
 /* --------
 	Footer
-   -------- */
+   --------
+	This part contains all the styles for the footer of AllanRo.pe's main page. */
 #footer {
-	margin-top: 40px;
+	margin-top: 40px; /* Keep a reasonable distance from the main content */
 
 	padding: 20px 0 40px;
 
-	border-top: 1px solid #888;
+	border-top: 1px solid #888; /* Separation line on top of the footer */
 }
 
+/* Styles for the links in the footer */
 #footer a {
 	position: relative;
 
@@ -241,8 +248,10 @@ em { font-style: italic; }
 	color: inherit;
 }
 
+/* A slight margin on the right of the links in the footer, except for the last link */
 #footer a:not(:last-of-type) { margin-right: 10px; }
 
+/* Common styles for the icons displayed before the links in the footer */
 #footer a:before {
 	content: "";
 	position: absolute;
@@ -252,6 +261,7 @@ em { font-style: italic; }
 	background-size: cover;
 }
 
+/* The blue Twitter logo is displayed before the Twitter link */
 #twitter-link:before {
 	top: 50%;
 	left: 4px;
@@ -263,6 +273,7 @@ em { font-style: italic; }
 	background-image: url("../img/twitter-icon.png");
 }
 
+/* A letter icon is displayed before the contact link */
 #contact-link:before {
 	top: 50%;
 	left: 3px;
